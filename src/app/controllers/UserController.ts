@@ -1,10 +1,9 @@
 import { Request, Response } from 'express'
-import { getRepository, Repository } from 'typeorm'
+import { getRepository } from 'typeorm'
 
 import * as Yup from 'yup'
 
 import User from '../models/User'
-
 class UserController {
   async store(req: Request, res: Response) {
     try {
@@ -91,8 +90,8 @@ class UserController {
         res.status(401).json({ error: 'Password does not match ' })
       }
 
-      delete req.body['oldPassword']
-      delete req.body['confirmPassword']
+      //delete req.body['oldPassword']
+      //delete req.body['confirmPassword']
 
       await userRepository.update(id, req.body)
 

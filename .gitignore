@@ -3,3 +3,4 @@ yarn.lock
 .env
 .env.test
 dist/*
+src/database/migrations/*
